@@ -21,5 +21,5 @@ def add_country():
         country = request.get_json()
         country["id"] = _find_next_id()
         countries.append(country)
-        return country, 201
+        return jsonify(country), 201
     return {"error": "Request must be JSON"}, 415
